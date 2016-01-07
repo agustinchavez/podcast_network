@@ -17,7 +17,7 @@ body {
   margin: 0 auto;
 }
 
-.wrapper-skinny {
+.wrapper_skinny {
   width: 50%;
   margin: 0 auto;
 }
@@ -110,15 +110,15 @@ body {
 }
 
 .podcast_banner {
-  background-image: url(/images/bike-on-a-wall.jpg);
+  background-image: image-url("bike-on-a-wall.jpg");
 }
 
 .sign_in_banner {
-  background-image: url(/images/bike-on-a-wall.jpg);
+  background-image: image-url("bike-on-a-wall.jpg");
 }
 
 .sign_up_banner {
-  background-image: url(/images/bike-on-a-wall.jpg);
+  background-image: image-url("bike-on-a-wall.jpg");
 }
 
 .pagination:before, .pagination:after {
@@ -188,6 +188,6 @@ textarea {
 
 @import 'welcome';
 @import 'normalize';
-/*@import 'podcast';*/
+@import 'podcasts';
 
 
