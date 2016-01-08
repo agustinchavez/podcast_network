@@ -29,7 +29,7 @@ class EpisodesController < ApplicationController
     if @episode.update episode_params
       redirect_to podcast_episode_path(@podcast, @episode), notice: "Episode was succesfully updated"
     else
-      reder 'edit'
+      render 'edit'
     end
   end
 
