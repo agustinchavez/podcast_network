@@ -1,7 +1,7 @@
 <div id="podcast_show">
   <div id="show_banner">
     <div class="wrapper_skinny">
-      <h1>The Rocketship Podcast Dashboard</h1>
+      <h1><%= @podcast.title %></h1>
     </div>
   </div>
 
@@ -34,7 +34,7 @@
       </div>
 
       <div class="field">
-        <%= f.label :thumbnail %><br />
+        <%= f.label :thumbnail %><br>
         <%= f.file_field :thumbnail %>
       </div>
 
