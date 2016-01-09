@@ -10,12 +10,16 @@
 <body>
 
 <% if alert %>
-  <p class="alert"><%= alert %></p>
+  <p class="alert">
+    <%= alert %>
+  </p>
 <% elsif notice %>
-  <p class="notice"><%= notice %></p>
+  <p class="notice">
+    <%= notice %>
+  </p>
 <% end %>
 
-<%= unless current_page?(root_path) %>
+<% unless current_page? (root_path) %>
   <%= render 'layouts/header'; %>
 <% end %>
 
