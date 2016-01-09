@@ -1,7 +1,8 @@
+<%= render 'layouts/header'; %>
 <div id="podcast_show">
   <div id="show_banner">
     <div class="wrapper_skinny">
-      <h1>The Rocketship Podcast Dashboard</h1>
+      <h1><%= @podcast.title %></h1>
     </div>
   </div>
 
@@ -39,10 +40,4 @@
     </div>
 </div>
 </div>
-
- <div class="pagination">
-  <span class="previous_page disabled">Previous</span>
-  <em class="current">1</em>
-  <a href="#">2</a>
-  <a class="next_page" href="#">Next</a>
-</div>
+<%= will_paginate @episodes, previous_label: "Previous", next_label: "Next" %>

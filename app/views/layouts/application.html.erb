@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>PodcastNetwork</title>
+  <%= favicon_link_tag 'Podcast_Network_logo.jpg' %>
   <link type="text/css" href="/skin/blue.monday/jplayer.blue.monday.css" rel="stylesheet" />
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -10,32 +11,31 @@
 <body>
 
 <% if alert %>
-  <p class="alert"><%= alert %></p>
+  <div id="notice_wrapper">
+    <p class="alert"><%= alert %></p>
+  </div>
 <% elsif notice %>
-  <p class="notice"><%= notice %></p>
+  <div id="notice_wrapper">
+    <p class="notice"><%= notice %></p>
+  </div>
 <% end %>
 
-<header id="main_header" class="cf">
-  <div class="wrapper_wide">
-    <%= link_to "Podcast Net", root_path, id: "logo" %>
-    <nav>
-      <ul>
-        <% unless podcast_signed_in? %>
-          <li><%= link_to "Explore", podcasts_path %></li>
-          <li><%= link_to "Sign in", new_podcast_session_path %></li>
-          <li><%= link_to "Create a Podcast", new_podcast_registration_path %></li>
-        <% else %>
-          <li><%= link_to "Dashboard", root_path %></li>
-          <li><%= link_to "Explore", podcasts_path %></li>
-          <li><%= link_to "Sing Out", destroy_podcast_session_path, method: :delete %></li>
-        <% end %>
-      </ul>
-    </nav>
-  </div>
-</header>
+<% unless current_page? (root_path) %>
+  <%= render 'layouts/header'; %>
+<% end %>
 
 
 <%= yield %>
+
+<script>
+$(document).ready(function(){
+  setTimeout(function() {
+    $('#notice_wrapper').fadeOut("slow", function(){
+      $this.remove();
+    });
+  }, 4500);
+});
+</script>
 
 </body>
 </html>
